@@ -1,0 +1,16 @@
+{
+  "registration": {
+    "email": {
+      "subject": "Por favor confirma tu dirección de email",
+      "bodytext": "Bienvenido a WikiHooku\nPor favor confirma tu dirección de email: {{tokenUrl}}",
+      "bodyhtml": "<h1>Bienvenido a WikiHooku</h1>Por favor confirma tu dirección de email <a href=\"{{tokenUrl}}\">CONFIRMA!</a>"
+    }
+  },
+  "recover": {
+    "email": {
+      "subject": "Recuperación de contraseña",
+      "bodytext": "Recuperación WikiHooku\nPor favor sigue este enlace para recuperar tu contraseña: {{tokenUrl}}",
+      "bodyhtml": "<h1>Recuperación WikiHooku</h1>Por favor sigue este enlace para recuperar tu contraseña <a href=\"{{tokenUrl}}\">RECUPERA!</a>"
+    }
+  }
+}
