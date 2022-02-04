@@ -9,7 +9,7 @@ describe('Feedback', () => {
     const response = await request(Server)
       .post('/api/feedback')
       .send({
-        email: 'wikihookutest@xicra.com',
+        email: 'test@wikihooku.com',
         feedback: 'I love WikiHooku',
       });
 
@@ -21,5 +21,18 @@ describe('Feedback', () => {
       .post('/api/feedback')
       .send({});
     chai.expect(res.statusCode).to.equal(httpStatuses.BAD_REQUEST);
+  });
+
+  it('returns an error if feedback email cannot be sent', async () => {
+    const senderEmail = process.env.SENDER_EMAIL;
+    process.env.SENDER_EMAIL = 'failin@addess.test';
+    const res = await request(Server)
+      .post('/api/feedback')
+      .send({
+        email: 'test@wikihooku.com',
+        feedback: 'I love WikiHooku',
+      });
+    chai.expect(res.statusCode).to.equal(httpStatuses.FORBIDDEN);
+    process.env.SENDER_EMAIL = senderEmail;
   });
 });

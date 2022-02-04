@@ -18,7 +18,13 @@ const controller = {
     }
 
     service.addFeedback(email, feedback);
-    mailer.sendFeedbackMail(email, feedback);
+    try {
+      await mailer.sendFeedbackMail(email, feedback);
+    } catch (error) {
+      res.log.error(`Cannot send feedback: ${JSON.stringify(email)} - error: ${JSON.stringify(error)}`);
+      response.error(res, error.message, error.code ? error.code : httpStatuses.INTERNAL_SERVER_ERROR);
+      return;
+    }
 
     response.object(res, {}, httpStatuses.NO_CONTENT);
   },
