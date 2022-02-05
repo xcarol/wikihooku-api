@@ -1,6 +1,6 @@
 # WikiHooku API
 
-[![CircleCI](https://circleci.com/bb/xcarol/wikiwa-api/tree/master.svg?style=svg&circle-token=0c73b168d8d2b8a0d97965c82f0ecf1da9a3139f)](https://circleci.com/bb/xcarol/wikiwa-api/tree/master)
+[![CircleCI](https://circleci.com/gh/xcarol/wikihooku-api/tree/master.svg?style=svg&circle-token=0c73b168d8d2b8a0d97965c82f0ecf1da9a3139f)](https://circleci.com/gh/xcarol/wikihooku-api/tree/master)
 
 ## Project setup
 
