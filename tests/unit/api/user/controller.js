@@ -120,13 +120,12 @@ describe('User Controller', () => {
       chai.expect(typeof obj).to.equal('object');
     });
 
-    chai.spy.on(service, 'addUser', () => Promise.resolve(mongooMock));
+    chai.spy.on(service, 'addUser', () => Promise.resolve(userOneCopy()));
     chai.spy.on(service, 'findUserByEmail', () => Promise.resolve());
     chai.spy.on(mailer, 'sendConfirmationMail');
 
     await controller.create(req, response);
     chai.expect(service.addUser).to.have.been.called();
-    chai.expect(mongooMock.toObject).to.have.been.called();
     chai.expect(mailer.sendConfirmationMail).to.have.been.called();
   });
 
@@ -547,7 +546,7 @@ describe('User Controller', () => {
     chai.spy.on(tokenizer, 'getRecoverPasswordToken', () => '');
     chai.spy.on(service, 'getRecoverPasswordUrl');
     chai.spy.on(service, 'recoverPassword', () => Promise.resolve());
-    chai.spy.on(mailer, 'sendRecoverPasswordMail');
+    chai.spy.on(mailer, 'sendRecoverPasswordMail', () => {});
 
     await controller.recoverPassword(req, response);
     chai.expect(service.findUserByEmail).to.have.been.called();
