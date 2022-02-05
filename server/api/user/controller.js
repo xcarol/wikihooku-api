@@ -54,14 +54,14 @@ const controller = {
         response.error(res, 'Invalid user', httpStatuses.BAD_REQUEST);
         return;
       }
+
+      const tokenUrl = service.getConfirmationUrl(req.i18n, monguser.email, monguser.confirmationToken);
+      await mailer.sendConfirmationMail(req.i18n, monguser.email, tokenUrl);
     } catch (error) {
       res.log.error(`Cannot create user: ${JSON.stringify(user)} - error: ${JSON.stringify(error)}`);
-      response.error(res, error.message, httpStatuses.INTERNAL_SERVER_ERROR);
+      response.error(res, error.message, error.code ? error.code : httpStatuses.INTERNAL_SERVER_ERROR);
       return;
     }
-
-    const tokenUrl = service.getConfirmationUrl(req.i18n, monguser.email, monguser.confirmationToken);
-    mailer.sendConfirmationMail(req.i18n, monguser.email, tokenUrl);
 
     const token = tokenizer.getLoginToken(monguser.toObject());
     response.object(res, { user: service.userToResponse(monguser), token }, httpStatuses.CREATED);
@@ -185,10 +185,10 @@ const controller = {
 
     try {
       await service.recoverPassword(monguser, token);
-      mailer.sendRecoverPasswordMail(req.i18n, email, tokenUrl);
+      await mailer.sendRecoverPasswordMail(req.i18n, email, tokenUrl);
     } catch (error) {
       res.log.error(`Cannot recover password for email: ${email} - error: ${JSON.stringify(error)}`);
-      response.message(res, error.message, httpStatuses.INTERNAL_SERVER_ERROR);
+      response.message(res, error.message, error.code ? error.code : httpStatuses.INTERNAL_SERVER_ERROR);
       return;
     }
 

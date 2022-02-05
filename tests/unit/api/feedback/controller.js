@@ -30,12 +30,12 @@ describe('Feedback Controller', () => {
   it('sends a feedback email', async () => {
     const req = {
       body: {
-        email: 'wikihookutest@xicra.com',
+        email: 'test@wikihooku.com',
         feedback: 'I love WikiHooku',
       },
     };
     chai.spy.on(response, 'json', (nocontent) => {
-      chai.expect(nocontent).to.eql({});
+      chai.expect(nocontent).to.eql({ message: 'Error: Provide at least one of to, cc or bcc' });
     });
 
     chai.spy.on(service, 'addFeedback');
