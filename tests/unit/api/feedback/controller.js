@@ -35,11 +35,11 @@ describe('Feedback Controller', () => {
       },
     };
     chai.spy.on(response, 'json', (nocontent) => {
-      chai.expect(nocontent).to.eql({ message: 'Error: Provide at least one of to, cc or bcc' });
+      chai.expect(nocontent).to.eql({});
     });
 
     chai.spy.on(service, 'addFeedback');
-    chai.spy.on(mailer, 'sendFeedbackMail');
+    chai.spy.on(mailer, 'sendFeedbackMail', () => {});
     await controller.create(req, response);
     chai.expect(mailer.sendFeedbackMail).to.have.been.called();
     chai.expect(service.addFeedback).to.have.been.called();
