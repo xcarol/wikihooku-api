@@ -1,0 +1,9 @@
+{
+  "registration": {
+    "email": {
+      "subject": "registration.email.subject",
+      "bodytext": "registration.email.bodytext",
+      "bodyhtml": "registration.email.bodyhtml"
+    }
+  }
+}
