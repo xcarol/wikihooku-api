@@ -21,8 +21,8 @@ Stored in `.env` or `.env.test.local` file for development and test respectively
 
 **CONFIRMATION_URL** - Url where the users confirms their account
 
-- development *<http://localhost:8080/confirm>*  
-- production *<https://www.wikihooku/confirm>*  
+- development *<http://localhost:8080/#/confirm>*  
+- production *<https://www.wikihooku/#/confirm>*  
 
 **DATABASE** - Wikihooku  
 
@@ -43,8 +43,8 @@ Stored in `.env` or `.env.test.local` file for development and test respectively
 
 **RECOVER_PASSWORD_URL** - Url for the user to recover password  
 
-- development *<http://localhost:8080/resetpass>*  
-- production *<https://www.wikihooku.com/resetpass>*  
+- development *<http://localhost:8080/#/resetpass>*  
+- production *<https://www.wikihooku.com/#/resetpass>*  
 
 **REGISTRATION_EMAIL** - Address from the registration email is sent to the user  
 
