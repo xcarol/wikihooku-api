@@ -8,7 +8,7 @@
 
 ### Environment variables
 
-Stored in `.env` or `.env.test.local` file for development and test respectively  
+Stored in `.env` file for development and `.env.test.local` file for testing.  
 
 **ALLOW_HEADERS** - CORS allow headers  
 
