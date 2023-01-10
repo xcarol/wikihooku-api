@@ -25,7 +25,7 @@ describe('Feedback', () => {
 
   it('returns an error if feedback email cannot be sent', async () => {
     const senderEmail = process.env.SENDER_EMAIL;
-    process.env.SENDER_EMAIL = 'failin@addess.test';
+    process.env.FEEDBACK_SENDER_EMAIL = 'failin@addess.test';
     const res = await request(Server)
       .post('/api/feedback')
       .send({
