@@ -56,7 +56,7 @@ const mailer = {
 
     const msg = {
       to: process.env.FEEDBACK_EMAIL,
-      from: process.env.SENDER_EMAIL,
+      from: process.env.FEEDBACK_SENDER_EMAIL,
       replyTo: email,
       subject: 'WikiHooku User feedback',
       html: feedback,
