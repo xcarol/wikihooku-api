@@ -93,5 +93,3 @@ To run all tests execute  `yarn test`
 To run unit tests execute  `yarn test:unit` or  `yarn test:unit:debug` to debug them
 
 To run functional tests execute  `yarn test:func` or  `yarn test:func:debug` to debug them
-
-Is master branch protected?
