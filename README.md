@@ -32,6 +32,8 @@ Stored in `.env` file for development and `.env.test.local` file for testing.
 
 **FEEDBACK_EMAIL** - Wikihooku Feedback<feedback@wikihooku.com>  
 
+**FEEDBACK_SENDER_EMAIL** = Wikihooku Sender Feedback <feedback-sender@wikihooku.com>
+
 **LOG_LEVEL** - debug  
 
 **MONGODB_URI** - Mongo database uri  
