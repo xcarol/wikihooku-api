@@ -1,16 +1,18 @@
 const wiki = require('../../services/wiki');
 
 const controller = {
-  async search(req, res) {
+  search(req, res, next) {
     wiki.request('https://www.wikipedia.org/w/api.php'
-      + '?action=opensearch'
-      + '&formatversion=2'
+      + '?action=query'
       + '&format=json'
-      + `&limit=${req.params.limit}`
-      + `&search=${req.params.text}`, res);
+      + '&list=search'
+      + '&utf8=1'
+      + '&srnamespace=0'
+      + '&srprop='
+      + `&srsearch=${req.params.text}`, res, next);
   },
-  async page(req, res) {
-    wiki.request(`https://www.wikipedia.org/w/api.php?action=parse&prop=wikitext&format=json&page=${req.params.text}`, res);
+  page(req, res, next) {
+    wiki.request(`https://www.wikipedia.org/w/api.php?action=parse&prop=wikitext&format=json&pageid=${req.params.pageid}`, res, next);
   },
 };
 
