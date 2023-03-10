@@ -1,6 +1,13 @@
 const wiki = require('../../services/wiki');
 
 const controller = {
+  page(req, res, next) {
+    wiki.request('https://www.wikipedia.org/w/api.php'
+      + '?action=parse'
+      + '&format=json'
+      + '&prop=wikitext'
+      + `&pageid=${req.params.pageid}`, res, next);
+  },
   search(req, res, next) {
     wiki.request('https://www.wikipedia.org/w/api.php'
       + '?action=query'
@@ -13,12 +20,16 @@ const controller = {
       + `&sroffset=${req.params.offset}`
       + '&srinfo=&srprop=', res, next);
   },
-  page(req, res, next) {
+  searchPerson(req, res, next) {
     wiki.request('https://www.wikipedia.org/w/api.php'
-      + '?action=parse'
+      + '?action=query'
+      + '&generator=search'
+      + `&gsrsearch=${req.params.text}`
       + '&format=json'
-      + '&prop=wikitext'
-      + `&pageid=${req.params.pageid}`, res, next);
+      + '&formatversion=2'
+      + '&prop=revisions'
+      + '&rvprop=content'
+      + '&rvsection=0', res, next);
   },
 };
 
