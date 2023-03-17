@@ -29,7 +29,8 @@ const controller = {
       + '&formatversion=2'
       + '&prop=revisions'
       + '&rvprop=content'
-      + '&rvsection=0', res, next);
+      + '&rvsection=0'
+      + '&rvslots=main', res, next);
   },
 };
 
