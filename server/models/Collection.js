@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, ObjectId } = mongoose;
 
 const CollectionSchema = new Schema(
   {
+    owner: {
+      type: ObjectId,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
