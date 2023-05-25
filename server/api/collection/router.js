@@ -1,8 +1,10 @@
 const { Router } = require('restify-router');
 const controller = require('./controller');
+const { AuthUser, IsOwner } = require('../../services/auth');
 
 const router = new Router();
 
 router.get('/:collectionid', controller.collection);
+router.post('', AuthUser(), IsOwner, controller.create);
 
 module.exports = router;
