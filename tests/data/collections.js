@@ -1,6 +1,7 @@
 module.exports = [
   {
     _id: '5d060e03dcfab1354be39be3',
+    owner: '646e359acd29fe8d7e7c6c8f',
     name: 'Musicians',
     items: [
       {
@@ -22,6 +23,7 @@ module.exports = [
   },
   {
     _id: '5d060e03dcfab1354be39be4',
+    owner: '646e35acae8226f3aef4792a',
     name: 'Football players',
     items: [
       {

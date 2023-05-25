@@ -21,11 +21,25 @@ describe('Collection Service', () => {
     chai.spy.restore();
   });
 
-  it('calls collection findOne', async () => {
+  it('calls collection findOne for findCollectionById', async () => {
     chai.spy.on(Collection, 'findOne', () => collectionOne);
     const collection = await service.findCollectionById();
 
     chai.expect(Collection.findOne).to.have.been.called();
     chai.expect(collection).to.deep.equal(collectionOne);
+  });
+
+  it('calls collection findOne for findCollectionByName', async () => {
+    chai.spy.on(Collection, 'findOne', () => collectionOne);
+    const collection = await service.findCollectionByName();
+
+    chai.expect(Collection.findOne).to.have.been.called();
+    chai.expect(collection).to.deep.equal(collectionOne);
+  });
+
+  it('saves a collection to database', async () => {
+    chai.spy.on(Collection, 'create', () => Promise.resolve());
+    await service.addCollection('collection name', []);
+    chai.expect(Collection.create).to.have.been.called();
   });
 });

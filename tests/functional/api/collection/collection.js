@@ -28,10 +28,10 @@ describe('Collection', () => {
 
   it('returns requested Collection', async () => {
     const addedCollections = await addCollections();
-    const response = await request(Server).get(`/api/collection/${addedCollections[0].name}}`);
+    const response = await request(Server).get(`/api/collection/${addedCollections[0].id}}`);
 
     chai.expect(response.statusCode).to.eql(httpStatuses.OK);
-    chai.expect(response.body.name).to.eql(addedCollections[0].name);
+    chai.expect(response.body.collection.name).to.eql(addedCollections[0].name);
   });
 
   it('returns error if requested collection does not exist', async () => {
@@ -40,8 +40,7 @@ describe('Collection', () => {
   });
 
   it('returns an error if any missing parameter', async () => {
-    const res = await request(Server)
-      .get('/api/collection/');
+    const res = await request(Server).get('/api/collection/');
     chai.expect(res.statusCode).to.equal(httpStatuses.BAD_REQUEST);
   });
 });
