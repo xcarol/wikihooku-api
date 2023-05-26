@@ -37,12 +37,14 @@ const controller = {
     }
 
     try {
-      const collectionExists = await service.findCollectionByName(collection.email);
+      const collectionExists = await service.findCollectionByName(collection.name);
       if (collectionExists) {
         response.error(res, 'collection already exists', httpStatuses.CONFLICT);
         return;
       }
 
+      collection.owner = collection._id;
+      collection._id = undefined;
       mongocollection = await service.addCollection(collection);
       if (mongocollection === null) {
         response.error(res, 'Invalid collection', httpStatuses.BAD_REQUEST);

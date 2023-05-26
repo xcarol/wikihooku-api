@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const { Schema, ObjectId } = mongoose;
+const { Schema } = mongoose;
 
 const CollectionSchema = new Schema(
   {
     owner: {
-      type: ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     name: {
@@ -23,6 +23,6 @@ const CollectionSchema = new Schema(
   },
 );
 
-CollectionSchema.index({ name: -1, items: [] });
+CollectionSchema.index({ name: -1 });
 
 module.exports = CollectionSchema;

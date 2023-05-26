@@ -8,8 +8,11 @@ const service = {
   async findCollectionById(collectionId) {
     return Collection.findOne({ collectionId });
   },
-  async addCollection(name, items) {
-    return Collection.create({ name, items });
+  async findCollectionByName(name) {
+    return Collection.findOne({ name });
+  },
+  async addCollection(collection) {
+    return Collection.create(collection);
   },
 };
 
