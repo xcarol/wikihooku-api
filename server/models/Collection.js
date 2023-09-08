@@ -4,6 +4,10 @@ const { Schema } = mongoose;
 
 const CollectionSchema = new Schema(
   {
+    owner: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -19,6 +23,6 @@ const CollectionSchema = new Schema(
   },
 );
 
-CollectionSchema.index({ name: -1, items: [] });
+CollectionSchema.index({ name: -1 });
 
 module.exports = CollectionSchema;

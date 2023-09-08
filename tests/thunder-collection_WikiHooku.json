@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "WikiHooku",
+    "dateExported": "2023-05-26T10:25:04.513Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5fbeafbb-e2a8-48ef-8689-d0b048c2f502",
+            "colId": "1c2bb259-3960-4e2e-9c69-9284df1caf64",
+            "containerId": "",
+            "name": "RegisterUser",
+            "url": "http://localhost:3000/api/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-26T10:24:28.833Z",
+            "modified": "2023-05-26T10:24:28.833Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"fullname\": \"Leonardo DaVinci\",\n    \"email\": \"leonardo@wikihooku.com\",\n    \"password\": \"leonardo\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "994a1be8-049d-43e0-b499-159ac16a65d6",
+            "colId": "1c2bb259-3960-4e2e-9c69-9284df1caf64",
+            "containerId": "",
+            "name": "ConfirmRegistration",
+            "url": "http://localhost:3000/api/user/confirm",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-26T10:24:48.166Z",
+            "modified": "2023-05-26T10:24:48.166Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"email\":\"leonardo@wikihooku.com\",\n\"confirmationToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxlb25hcmRvMTZAd2lraWhvb2t1LmNvbSIsImV4cGlyZXNBdCI6MTY4NTI2ODk5NTUxNSwiaWF0IjoxNjg1MDk2MTk1fQ.75hEzNAhpJeRa5uY3FJ9My28h3E9mTNAG8g4uuwgznQ\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
