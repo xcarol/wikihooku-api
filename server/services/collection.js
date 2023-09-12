@@ -14,6 +14,9 @@ const service = {
   async addCollection(collection) {
     return Collection.create(collection);
   },
+  async getAllCollectionNames() {
+    return Collection.find().select('name');
+  },
 };
 
 module.exports = service;

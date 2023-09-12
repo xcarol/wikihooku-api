@@ -4,6 +4,7 @@ const { AuthUser, IsOwner } = require('../../services/auth');
 
 const router = new Router();
 
+router.get('/names', controller.collectionNames);
 router.get('/:collectionid', controller.collection);
 router.post('', AuthUser(), IsOwner, controller.create);
 
