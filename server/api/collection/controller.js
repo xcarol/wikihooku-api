@@ -3,6 +3,13 @@ const response = require('../../services/response');
 const httpStatuses = require('../../consts/httpStatuses');
 
 const controller = {
+  async collectionNames(req, res) {
+    const collectionNames = await service.getAllCollectionNames();
+
+    response.object(res, {
+      collectionNames,
+    });
+  },
   async collection(req, res) {
     if (!req.params || !req.params.collectionid) {
       response.error(res, 'Missing collection id', httpStatuses.BAD_REQUEST);
