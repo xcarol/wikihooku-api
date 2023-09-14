@@ -1,6 +1,8 @@
 # WikiHooku API
 
-[![CircleCI](https://circleci.com/gh/xcarol/wikihooku-api/tree/master.svg?style=svg&circle-token=0c73b168d8d2b8a0d97965c82f0ecf1da9a3139f)](https://circleci.com/gh/xcarol/wikihooku-api/tree/master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cd4821b097a457b8dbed79f3abae62a)](https://app.codacy.com/gh/xcarol/wikihooku-api/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+This is the API for the [WikiHooku](https://github.com/xcarol/wikihooku) application. Refer to the [WikiHooku](https://github.com/xcarol/wikihooku) application to know more about this project.
 
 ## Project setup
 
