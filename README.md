@@ -6,7 +6,7 @@ This is the API for the [WikiHooku](https://github.com/xcarol/wikihooku) applica
 
 ## Project setup
 
-- To install the project dependencies run `yarn install`
+- To install the project dependencies run `npm install`
 
 ### Environment variables
 
@@ -66,32 +66,32 @@ Stored in `.env` file for development and `.env.test.local` file for testing.
 
 ## First run
 
-- Execute `yarn dev:env:start` to start mongo server locally
-- Execute `yarn dev:env:build` to setup the database  
+- Execute `npm run dev:env:start` to start mongo server locally
+- Execute `npm run dev:env:build` to setup the database  
 
 **Remember** to stop the developmet environment to avoid future weird issues
 
-- Execute `yarn dev:env:stop`
+- Execute `npm run dev:env:stop`
 
 ## Run
 
-- To run the application in development mode execute `yarn dev`
-- To run the application in use mode execute `yarn start`
+- To run the application in development mode execute `npm run dev`
+- To run the application in use mode execute `npm run start`
 
 ## Debug
 
-To debug the application execute `yarn dev:debug`
+To debug the application execute `npm run dev:debug`
 
 ## Tools
 
-To lint the project execute `yarn lint` or `yarn lint:fix` to autofix lints
+To lint the project execute `npm run lint` or `npm run lint:fix` to autofix lints
 
 ## Tests
 
 **NOTE**: Before running tests copy the `.env` file to `.env.test.local` if it isn't already there or you have your own customized `.env.test.local`.
 
-To run all tests execute  `yarn test`
+To run all tests execute  `npm run test`
 
-To run unit tests execute  `yarn test:unit` or  `yarn test:unit:debug` to debug them
+To run unit tests execute  `npm run test:unit` or  `npm run test:unit:debug` to debug them
 
-To run functional tests execute  `yarn test:func` or  `yarn test:func:debug` to debug them
+To run functional tests execute  `npm run test:func` or  `npm run test:func:debug` to debug them
