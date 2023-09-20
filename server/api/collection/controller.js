@@ -4,7 +4,13 @@ const httpStatuses = require('../../consts/httpStatuses');
 
 const controller = {
   async collectionNames(req, res) {
-    const collectionNames = await service.getAllCollectionNames();
+    let collectionNames = [];
+
+    if (req.params && req.params.userid) {
+      collectionNames = await service.getUserCollectionNames(req.params.userid);
+    } else {
+      collectionNames = await service.getAllCollectionNames();
+    }
 
     response.object(res, {
       collectionNames,
