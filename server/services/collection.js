@@ -17,6 +17,9 @@ const service = {
   async getAllCollectionNames() {
     return Collection.find().select('name');
   },
+  async getUserCollectionNames(userid) {
+    return Collection.find({ owner: userid }).select('name');
+  },
 };
 
 module.exports = service;
