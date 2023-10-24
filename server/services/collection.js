@@ -14,11 +14,11 @@ const service = {
   async addCollection(collection) {
     return Collection.create(collection);
   },
-  async getAllCollectionNames() {
-    return Collection.find().select('name');
+  async getPublicCollectionNames() {
+    return Collection.find({ public: true }).select('name');
   },
-  async getUserCollectionNames(userid) {
-    return Collection.find({ owner: userid }).select('name');
+  async getUserCollectionNames(userid, includePublic = false) {
+    return Collection.find({ owner: userid, public: includePublic }).select('name');
   },
 };
 
