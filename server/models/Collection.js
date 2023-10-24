@@ -16,6 +16,10 @@ const CollectionSchema = new Schema(
       type: Array,
       required: true,
     },
+    public: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     strict: true,
