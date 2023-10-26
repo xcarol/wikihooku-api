@@ -3,14 +3,12 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    mocha: true,
   },
   extends: [
     'eslint-config-airbnb-base',
     'plugin:security/recommended',
   ],
   plugins: [
-    'mocha',
     'security',
   ],
   rules: {
@@ -22,9 +20,6 @@ module.exports = {
       js: 'never',
     }],
     'arrow-parens': ['error', 'always'],
-    'mocha/no-exclusive-tests': 'error',
-    'mocha/no-identical-title': 'error',
-    'mocha/valid-test-description': ['warn', '^(?!should).*$', ['it', 'specify', 'test']],
   },
   parserOptions: {
     ecmaVersion: 2018,
