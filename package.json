@@ -22,16 +22,8 @@
     "migrate:down": "migrate-mongo down",
     "migrate:up": "migrate-mongo up",
     "migrate:status": "migrate-mongo status",
-    "test": "yarn test:func && yarn test:unit",
-    "test:func": "NODE_ENV=test mocha --config=tests/functional/.mocharc.js",
-    "test:func:debug": "NODE_ENV=test mocha --inspect-brk --timeout 100000 --config=tests/functional/.mocharc.js",
-    "test:unit": "NODE_ENV=test nyc mocha --config=tests/unit/.mocharc.js",
-    "test:unit:circle": "NODE_ENV=test nyc mocha --config=tests/unit/.mocharc.js",
-    "test:unit:debug": "NODE_ENV=test mocha --inspect-brk --config=tests/unit/.mocharc.js",
-    "test:unit:file": "NODE_ENV=test mocha ",
-    "test:unit:file:debug": "NODE_ENV=test mocha --inspect-brk",
-    "lint": "eslint -c .eslintrc.js {server,tests}/**",
-    "lint:fix": "eslint --fix -c .eslintrc.js {server,tests}/**"
+    "lint": "eslint -c .eslintrc.js {server}/**",
+    "lint:fix": "eslint --fix -c .eslintrc.js {server}/**"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
@@ -57,38 +49,13 @@
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
-    "chai": "^4.3.4",
-    "chai-spies": "^1.0.0",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-mocha": "^10.0.3",
     "eslint-plugin-security": "^1.4.0",
     "husky": "^4.3.8",
-    "mocha": "^9.2.0",
     "nodemon": "^2.0.15",
-    "nyc": "^15.1.0",
-    "supertest": "4.0.2",
     "yorkie": "^2.0.0"
-  },
-  "mocha": {
-    "recursive": true,
-    "exit": true
-  },
-  "nyc": {
-    "include": [
-      "server/**/*.js"
-    ],
-    "exclude": [
-      "server/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text",
-      "text-summary"
-    ],
-    "all": true,
-    "report-dir": "tests/unit/coverage"
   },
   "husky": {
     "hooks": {
