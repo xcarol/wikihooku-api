@@ -13,7 +13,7 @@
     "dev": "nodemon server",
     "dev:debug": "nodemon server --inspect",
     "dev:env:build": "migrate-mongo up",
-    "dev:env:restart": "yarn dev:env:stop && yarn dev:env:start",
+    "dev:env:restart": "npm run dev:env:stop && npm run dev:env:start",
     "dev:env:start": "CURRENT_UID=`id -u`:`id -g` docker-compose up -d",
     "dev:env:start:debug": "CURRENT_UID=`id -u`:`id -g` docker-compose up",
     "dev:env:stop": "CURRENT_UID=`id -u`:`id -g` docker-compose down",
@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
-    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^14.2.0",
     "i18next": "^21.6.7",
-    "i18next-http-middleware": "^3.1.5",
     "i18next-fs-backend": "^1.1.4",
+    "i18next-http-middleware": "^3.1.5",
     "jsonwebtoken": "^8.5.1",
     "migrate-mongo": "^8.2.3",
     "mongoose": "^6.1.7",
@@ -59,9 +59,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn test:unit"
+      "pre-push": "npm run test:unit"
     }
   }
 }
