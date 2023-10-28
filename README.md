@@ -10,7 +10,11 @@ This is the API for the [WikiHooku](https://github.com/xcarol/wikihooku) applica
 
 ### Environment variables
 
-Stored in `.env` file for development and `.env.test.local` file for testing.  
+Stored in `.env` file.  
+
+**PORT** - Server listening port
+
+- 3000  
 
 **ALLOW_HEADERS** - CORS allow headers  
 
@@ -21,38 +25,22 @@ Stored in `.env` file for development and `.env.test.local` file for testing.
 - development - *  
 - production < wikihooku client url >  
 
-**CONFIRMATION_URL** - Url where the users confirms their account
-
-- development *<http://localhost:8080/#/confirm>*  
-- production *<https://www.wikihooku/#/confirm>*  
-
-**DATABASE** - Wikihooku  
-
 **EXPOSE_HEADERS** - CORS expose headers  
 
 - Authorization  
 
-**FEEDBACK_EMAIL** - Wikihooku Feedback<feedback@wikihooku.com>  
+**LOG_LEVEL** - Level of traces to register
 
-**FEEDBACK_SENDER_EMAIL** = Wikihooku Sender Feedback <feedback-sender@wikihooku.com>
+- debug  
 
-**LOG_LEVEL** - debug  
+**DATABASE** - Name of the database
+
+- Wikihooku  
 
 **MONGODB_URI** - Mongo database uri  
 
 - development *mongodb://admin:secret@127.0.0.1:27017/Wikihooku?authSource=admin*  
 - production *mongodb+srv://\<user>:\<password>@cluster0.cxcwm.mongodb.net/\<database>?retryWrites=true&w=majority*
-
-**PORT** - 3000  
-
-**RECOVER_PASSWORD_URL** - Url for the user to recover password  
-
-- development *<http://localhost:8080/#/resetpass>*  
-- production *<https://www.wikihooku.com/#/resetpass>*  
-
-**REGISTRATION_EMAIL** - Address from the registration email is sent to the user  
-
-- Wikihooku <no-reply@wikihooku.com>  
 
 **SALT** - SALT for password generation  
 
@@ -60,9 +48,43 @@ Stored in `.env` file for development and `.env.test.local` file for testing.
 
 **SECRET** - SECRET for password generation  
 
-- example: W1k1WaX1cr4C0m  
+- example: MyC00lS3cr3t  
+
+**CONFIRMATION_URL** - Url where the users confirms their account
+
+- development *<http://localhost:8080/confirm>*  
+- production *<https://www.wikihooku/confirm>*  
+
+**RECOVER_PASSWORD_URL** - Url for the user to recover password  
+
+- development *<http://localhost:8080/resetpass>*  
+- production *<https://www.wikihooku.com/resetpass>*  
+
+### Email attributes
+
+- SMTP server (mostly for production) has precedence over Sendgrid  
+
+**SMTP_SERVER** - SMTP server address  
+
+**FEEDBACK_EMAIL_USR** - user's email address to send feedback to  
+
+**FEEDBACK_EMAIL_PWD** - user's password to send feedback to  
+
+**REGISTRATION_EMAIL_USR** - user's email address used to send registration and recover password emails  
+
+**REGISTRATION_EMAIL_PWD** - user's password used to send registration and recover password emails  
+
+- Sendgrid (mostly for development)  
 
 **SENDGRID_API_KEY** - API key created by sendgrid to enable mail sending  
+
+**FEEDBACK_SENDER_EMAIL** - Wikihooku Sender Feedback <feedback-sender@wikihooku.com>
+
+- Both
+
+**FEEDBACK_EMAIL** - Wikihooku Feedback <feedback@wikihooku.com>  
+
+**REGISTRATION_EMAIL** - Address from the registration email is sent to the user - Wikihooku <no-reply@wikihooku.com>  
 
 ## First run
 
@@ -88,10 +110,10 @@ To lint the project execute `npm run lint` or `npm run lint:fix` to autofix lint
 
 ## Tests
 
-**NOTE**: Before running tests copy the `.env` file to `.env.test.local` if it isn't already there or you have your own customized `.env.test.local`.
+After being a passionate of tests for years I finally decided that I like to develop applications  
+instead of developing applications prepared to be tested and spent more than 60% of development time  
+writing tests. Now I feel comfortable with a good code structure and encapsulation (I do my best)  
+a readable code and automatic tools like *codacy* which are porwerful enough to help on the  
+code improvment.  
 
-To run all tests execute  `npm run test`
-
-To run unit tests execute  `npm run test:unit` or  `npm run test:unit:debug` to debug them
-
-To run functional tests execute  `npm run test:func` or  `npm run test:func:debug` to debug them
+- *You can write a million tests, at some point the application will fail for sure*

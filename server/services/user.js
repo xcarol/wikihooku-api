@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const globals = require('../consts/globals');
 
 const logger = require('./logger');
@@ -11,7 +11,7 @@ const User = mongoose.model('User', UserSchema);
 
 const service = {
   async encryptPassword(password) {
-    return bcrypt.hash(
+    return bcryptjs.hash(
       password,
       process.env.SALT,
     );
@@ -69,7 +69,7 @@ const service = {
     if (!monguser) {
       return null;
     }
-    const rightPass = bcrypt.compareSync(password, monguser.password);
+    const rightPass = bcryptjs.compareSync(password, monguser.password);
 
     return rightPass ? monguser : null;
   },
