@@ -17,8 +17,12 @@ const service = {
   async getPublicCollectionNames() {
     return Collection.find({ public: true }).select('name');
   },
-  async getUserCollectionNames(userid, includePublic = false) {
-    return Collection.find({ owner: userid, public: includePublic }).select('name');
+  async getUserCollectionNames(userid) {
+    if (mongoose.isValidObjectId(userid)) {
+      return Collection.find({ owner: userid }).select('name');
+    }
+
+    return [];
   },
 };
 
