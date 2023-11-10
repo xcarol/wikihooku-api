@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 const mongoose = require('mongoose');
 const bcryptjs = require('bcryptjs');
-const globals = require('../consts/globals');
+const globals = require('../lib/globals');
 
 const logger = require('./logger');
 const tokenizer = require('./tokenizer');

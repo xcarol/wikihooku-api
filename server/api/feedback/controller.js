@@ -1,7 +1,7 @@
 const service = require('../../services/feedback');
 const response = require('../../services/response');
 const mailer = require('../../services/mailer');
-const httpStatuses = require('../../consts/httpStatuses');
+const httpStatuses = require('../../lib/httpStatuses');
 
 const controller = {
   async create(req, res) {

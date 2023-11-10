@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const globals = require('../consts/globals');
+const globals = require('../lib/globals');
 
 const tokenizer = {
   getLoginToken(user) {
