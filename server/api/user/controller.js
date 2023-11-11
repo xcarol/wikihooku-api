@@ -1,9 +1,9 @@
-const globals = require('../../consts/globals');
+const globals = require('../../lib/globals');
 const service = require('../../services/user');
 const response = require('../../services/response');
 const mailer = require('../../services/mailer');
 const tokenizer = require('../../services/tokenizer');
-const httpStatuses = require('../../consts/httpStatuses');
+const httpStatuses = require('../../lib/httpStatuses');
 
 const controller = {
   async user(req, res) {

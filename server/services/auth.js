@@ -4,7 +4,7 @@ const { Strategy: AnonymousStrategy } = require('passport-anonymous');
 const userService = require('./user');
 const tokenizer = require('./tokenizer');
 const response = require('./response');
-const httpStatuses = require('../consts/httpStatuses');
+const httpStatuses = require('../lib/httpStatuses');
 
 async function BearerCheck(token, cb) {
   if (tokenizer.isTokenExpired(token)) {

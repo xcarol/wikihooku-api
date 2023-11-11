@@ -1,4 +1,4 @@
-const httpStatuses = require('../consts/httpStatuses');
+const httpStatuses = require('../lib/httpStatuses');
 
 const response = {
   object(res, object, code = httpStatuses.OK) {

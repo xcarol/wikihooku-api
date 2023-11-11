@@ -1,6 +1,6 @@
 const service = require('../../services/collection');
 const response = require('../../services/response');
-const httpStatuses = require('../../consts/httpStatuses');
+const httpStatuses = require('../../lib/httpStatuses');
 
 const controller = {
   async collectionNames(req, res) {
